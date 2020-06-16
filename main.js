@@ -35,7 +35,7 @@ Promise.all([
 // faceLandmark68Net => PAra reconocimiento de las caras
 
 
-video.addEventListener('play', () =>{
+video.addEventListener('play',async () =>{
 
 	const canvas=faceapi.createCanvasFromMedia(video);
 	document.body.append(canvas);
