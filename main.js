@@ -46,7 +46,12 @@ video.addEventListener('play',async () =>{
 
 	setInterval( async()=>{
 		const detections = await faceapi.detectAllFaces(video,new faceapi.TinyFaceDetectorOptions());
-		console.log(detections);
+		// console.log(detections);
+		
+		// ahora redireccionamos el tamaño del Canvas
+		const resizedDetections=faceapi.resizeResults(detections,displaySize);
+		// Pintamos
+		faceapi.draw.drawDetections(canvas,resizedDetections);
 	},1000)
 
 });
