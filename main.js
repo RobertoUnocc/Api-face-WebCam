@@ -52,6 +52,6 @@ video.addEventListener('play',async () =>{
 		const resizedDetections=faceapi.resizeResults(detections,displaySize);
 		// Pintamos
 		faceapi.draw.drawDetections(canvas,resizedDetections);
-	},1000)
+	},100)
 
 });
