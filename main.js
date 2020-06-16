@@ -33,3 +33,20 @@ Promise.all([
 
 // faceapi.nets.tinyFaceDetector.loadFromUri('/models') =>Detectar las caras
 // faceLandmark68Net => PAra reconocimiento de las caras
+
+
+video.addEventListener('play', () =>{
+
+	const canvas=faceapi.createCanvasFromMedia(video);
+	document.body.append(canvas);
+	// dibujamos el objeto
+	const displaySize = {width:video.width, height:video.height};
+	// El video tendria el canvas poe encima con el mismo tamaño
+	faceapi.matchDimensions(canvas,displaySize);
+
+	setInterval( async()=>{
+		const detections = await faceapi.detetAllFaces(video,new faceapi.TinyFaceDetectorOptions());
+		console.log(detections);
+	},1000)
+
+});
