@@ -13,7 +13,7 @@ function startVideo() {
 		{ video : {} },
 		stream => video.srcObject = stream,
 		err => console.log(err)
-	)
+		)
 
 }
 
@@ -23,12 +23,12 @@ function startVideo() {
 
 
 Promise.all([
-  faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
-  faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('./models'),
-  faceapi.nets.ageGenderNet.loadFromUri('./models')
-]).then(startVideo)
+	faceapi.nets.faceRecognitionNet.loadFromUri('./models'),
+	faceapi.nets.faceLandmark68Net.loadFromUri('./models'),
+	faceapi.nets.tinyFaceDetector.loadFromUri('./models'),
+	faceapi.nets.faceExpressionNet.loadFromUri('./models'),
+	faceapi.nets.ageGenderNet.loadFromUri('./models')
+	]).then(startVideo)
 // Abrir la webCam cuando se reconoce a todos los modelos
 
 // faceapi.nets.tinyFaceDetector.loadFromUri('/models') =>Detectar las caras
