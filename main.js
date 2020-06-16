@@ -45,13 +45,17 @@ video.addEventListener('play',async () =>{
 	faceapi.matchDimensions(canvas,displaySize);
 
 	setInterval( async()=>{
-		const detections = await faceapi.detectAllFaces(video,new faceapi.TinyFaceDetectorOptions());
+		const detections = await faceapi.detectAllFaces(video,new faceapi.TinyFaceDetectorOptions()).widthFaceLandmarks();
 		// console.log(detections);
 		
 		// ahora redireccionamos el tamaño del Canvas
 		const resizedDetections=await faceapi.resizeResults(detections,displaySize);
+
+		// limpiar
+		canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
 		// Pintamos
 		faceapi.draw.drawDetections(canvas,resizedDetections);
+		faceapi.draw.drawFaceLandmarks(canvas,resizedDetections);
 	},100)
 
 });
