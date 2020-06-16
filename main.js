@@ -49,7 +49,7 @@ video.addEventListener('play',async () =>{
 		// console.log(detections);
 		
 		// ahora redireccionamos el tamaño del Canvas
-		const resizedDetections=faceapi.resizeResults(detections,displaySize);
+		const resizedDetections=await faceapi.resizeResults(detections,displaySize);
 		// Pintamos
 		faceapi.draw.drawDetections(canvas,resizedDetections);
 	},100)
