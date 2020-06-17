@@ -86,7 +86,7 @@ video.addEventListener('play',async () =>{
 
 // ***************************
 function loadLabeledImages() {
-    const labels = ['Roberto Carlos','Luis Fernando']
+    const labels = ['Roberto Carlos','Luis Fernando','Elvis Pernia']
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
