@@ -52,7 +52,7 @@ video.addEventListener('play',async () =>{
     const displaySize = {width:video.width, height:video.height};
     // El video tendria el canvas poe encima con el mismo tamaño
     faceapi.matchDimensions(canvas,displaySize);
-
+    alert('Escaneo completo,mostrando datos');
     setInterval( async()=>{
         const detections = await faceapi.detectAllFaces(video,new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();;
         // console.log(detections);
@@ -75,6 +75,7 @@ video.addEventListener('play',async () =>{
           const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
           drawBox.draw(canvas);
           console.log(drawBox.options.label);
+          console.log(typeof(drawBox.options.label));
         })
         
     },1000)
