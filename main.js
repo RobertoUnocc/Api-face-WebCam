@@ -60,7 +60,7 @@ video.addEventListener('play',async () =>{
         // ahora redireccionamos el tamaño del Canvas
         const resizedDetections=await faceapi.resizeResults(detections,displaySize);
 
-         alert('Escaneo completo,mostrando datos');
+        
          
         // -----------------------------------------------------
         // limpiar
