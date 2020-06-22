@@ -52,7 +52,7 @@ video.addEventListener('play',async () =>{
     const displaySize = {width:video.width, height:video.height};
     // El video tendria el canvas poe encima con el mismo tamaño
     faceapi.matchDimensions(canvas,displaySize);
-    alert('Escaneo completo,mostrando datos');
+   
     setInterval( async()=>{
         const detections = await faceapi.detectAllFaces(video,new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();;
         // console.log(detections);
@@ -60,6 +60,8 @@ video.addEventListener('play',async () =>{
         // ahora redireccionamos el tamaño del Canvas
         const resizedDetections=await faceapi.resizeResults(detections,displaySize);
 
+         alert('Escaneo completo,mostrando datos');
+         
         // -----------------------------------------------------
         // limpiar
         canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
