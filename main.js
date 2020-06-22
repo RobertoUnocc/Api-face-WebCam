@@ -74,7 +74,7 @@ video.addEventListener('play',async () =>{
           const box = resizedDetections[i].detection.box;
           const drawBox = new faceapi.draw.DrawBox(box, { label: result.toString() });
           drawBox.draw(canvas);
-          console.log(drawBox);
+          console.log(drawBox.options.label);
         })
         
     },1000)
